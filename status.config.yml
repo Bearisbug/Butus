@@ -20,5 +20,5 @@ monitors:
   - name: Drill Target
     id: drill
     group: Main
-    target: https://example.com
+    target: https://butus-drill-nonexistent.invalid
     timeoutMs: 5000

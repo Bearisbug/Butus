@@ -17,3 +17,8 @@ monitors:
     type: keyword
     target: https://example.com
     keyword: Example Domain
+  - name: Drill Target
+    id: drill
+    group: Main
+    target: https://butus-drill-nonexistent.invalid
+    timeoutMs: 5000

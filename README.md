@@ -9,6 +9,8 @@
 - 📡 JSON API, Atom feed, SVG badges, webhook notifications (Slack-compatible)
 - 🔒 Zero telemetry. Your data lives in your repo, publicly auditable.
 
+**Live demo:** https://bearisbug.github.io/butus-demo/ (a real instance created from this template — took ~2 minutes to go live)
+
 ## Quick start (≈10 minutes)
 
 1. Click **Use this template** → create a **public** repository.

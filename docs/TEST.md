@@ -437,6 +437,8 @@
 | RUN-005 | 2026-07-29 | 工作区(交叉审核 12 项修复后) | AI(Claude Code:CLI + Playwright/Edge) | 局部(REQ-001/003/005/007/008/010/014 → TC-001~009、TC-015~019、TC-021、TC-026 本地部分、TC-027 + 全部冒烟级) | 通过 9/10 · 待人工 1 |
 | RUN-006 | 2026-07-29 | 工作区(第二轮 bug-hunt 15 项修复后,出厂 data/ 已清空) | AI(Claude Code:CLI + Playwright/Edge) | 局部(REQ-005/006/007/008/009/010/015 → TC-010~019 本地可测部分、TC-021、TC-027 + 全部冒烟级) | 通过 9/10 · 待人工 1 |
 | RUN-007 | 2026-08-01 | 工作区(v2.0:Butus 定名 + data 分支 + i18n + Logo + 维护留言,首个 commit 前) | AI(Claude Code:CLI + Playwright/Edge + Lighthouse) | 局部(REQ-004/008/016/017/018 → TC-008、TC-015~019、TC-021、TC-027~030 + 全部冒烟级) | 通过 12/13 · 待人工 1 |
+| RUN-008 | 2026-08-01 | 982a6de~cea7e0f(github.com/Bearisbug/Butus 真实演练) | AI(gh CLI + 真实 Actions/Issues/Pages/webhook.site) | 演练(承接 RUN-001 阻塞项:TC-010~014、TC-024、TC-025、TC-026、TC-031) | 通过 8/9 · 失败 1 |
+| RUN-009 | 2026-08-01 | 含 lock 修复的 main 头部 | AI(gh CLI + Playwright/Edge) | 复测(RUN-008:TC-011 + 全部冒烟级) | 通过 5/5 |
 
 明细(仅登非「通过」项):
 
@@ -464,6 +466,11 @@ RUN-003 通过项证据:浏览器断言 22/22(新增「悬停浮层卡片含日�
 | RUN-006 | TC-020 | 待人工 | 主观观感不变 | 待用户人工验收 |
 
 | RUN-007 | TC-020 | 待人工 | 主观观感(新增 Logo/中文态) | 待用户人工验收 |
+| RUN-008 | TC-011 | 失败 | 步骤 1:预期恢复留言+关闭,实际 GITHUB_TOKEN 对锁定 Issue 留言 403(run 30692429381 日志);降级路径正确保留 openIncident | 修复于 main(解锁→留言→关闭→重新锁定),RUN-009 复测通过 |
+
+RUN-009 通过项证据:TC-011 真实复测——Issue #1 closed+locked,恢复留言「recovered after 9 minutes」,webhook incident_resolved(9min);冒烟级本地 28/28 浏览器断言全过。
+
+RUN-008 通过项证据(全部真实环境,仓库 Bearisbug/Butus):TC-010 Issue #1 自动开(labels status-page/monitor:drill/investigating,locked=true,正文含 UTC 起始/dns_error/runId),二次 dispatch 无重复;TC-012 换标签+留言双触发 site.build,线上 /incidents/1/ 时间线含 Identified 节点与留言全文;TC-013 维护窗口 #2 内探测连败零新 Issue,快照 drill=maintenance/activeMaintenances 含 #2;TC-014 窗口过期自动留言关闭 #2、事故 #3 正确重开;TC-024 webhook.site 捕获 incident_open(dns_error)与 incident_resolved(9min);TC-025 模板实例 butus-demo 从建仓到真实状态上线 2 分 05 秒(≤10 分钟);TC-026 非法配置被 validate 关卡拦截(报 monitors.3.target)且线上页面保持 200;TC-031 data 分支首轮自动创建、main 提交史零数据 commit、raw 实时可读。
 
 RUN-007 通过项证据:单元测试 23/23(新增 site.lang 校验);tsc + astro check 零错误;浏览器断言 28/28(新增 Logo 渲染、维护留言时间线两项);中文构建 5 组关键文案检索命中;validate:api 三文件 valid;Lighthouse 实测 mobile 100 分/LCP 0.9s、desktop 100 分/LCP 0.2s(`docs/test-runs/lighthouse-{mobile,desktop}.json`),达 §3 目标(≥95/<2s)。TC-031 待演练轮(需真实 GitHub)。
 

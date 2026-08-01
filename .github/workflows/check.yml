@@ -46,11 +46,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         working-directory: data
         run: |
-          # 首轮无 data 分支:上方 checkout 失败留下的是 checker 新建的裸目录,就地建孤儿分支(ADR-007)
+          # 首轮无 data 分支:上方 checkout 失败可能残留半初始化的 .git(HEAD 不在 data),
+          # 统一用 symbolic-ref 把 HEAD 定到 data 分支(保留工作区),push 用显式 refspec(ADR-007)
           if [ ! -d .git ]; then
-            git init -b data
+            git init
             git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           fi
+          git symbolic-ref HEAD refs/heads/data
           git config user.name "butus-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
@@ -59,7 +61,7 @@ jobs:
           else
             git commit -m "checks: $(date -u +%FT%TZ)"
             # push 竞态:rebase 重试 1 次,仍失败则放弃本轮(下轮自愈,docs/DESIGN.md §16)
-            git push origin data || { git pull --rebase origin data && git push origin data; } || echo "::warning::data push skipped this round"
+            git push origin HEAD:refs/heads/data || { git pull --rebase origin data && git push origin HEAD:refs/heads/data; } || echo "::warning::data push skipped this round"
           fi
 
   deploy:

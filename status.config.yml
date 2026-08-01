@@ -17,10 +17,3 @@ monitors:
     type: keyword
     target: https://example.com
     keyword: Example Domain
-  - name: Drill Target
-    id: drill
-    group: Main
-    target: https://example.com
-    timeoutMs: 5000
-  - name: Broken Monitor
-    group: Main

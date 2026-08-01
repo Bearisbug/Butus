@@ -4,11 +4,11 @@
   "days": [
     {
       "date": "2026-08-01",
-      "total": 4,
+      "total": 5,
       "up": 2,
       "degraded": 0,
-      "down_count": 2,
-      "down_minutes": 10,
+      "down_count": 3,
+      "down_minutes": 15,
       "avg_ms": 37,
       "max_ms": 51
     }

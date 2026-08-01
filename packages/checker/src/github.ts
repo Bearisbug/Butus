@@ -217,10 +217,15 @@ async function prepare(now: Date, knownIds: string[]): Promise<GitHubContext | n
         if (!issue || issue.state !== 'open') return null // 幂等:已被人工关闭
         const durationMinutes = Math.max(0, Math.round((now.getTime() - Date.parse(issue.created_at)) / 60000))
         const api = new Api(process.env.GITHUB_TOKEN!, process.env.GITHUB_REPOSITORY!)
+        // GITHUB_TOKEN 不能在锁定的 Issue 上留言(403):先解锁→留言→关闭→重新锁定归档(演练 RUN-008 发现)
+        await api.request('DELETE', `/issues/${issue.number}/lock`).catch(() => {})
         await api.request('POST', `/issues/${issue.number}/comments`, {
           body: `✅ **Resolved.** ${m.name} recovered after **${durationMinutes} minutes** of downtime.`,
         })
         await api.request('PATCH', `/issues/${issue.number}`, { state: 'closed' })
+        await api
+          .request('PUT', `/issues/${issue.number}/lock`, { lock_reason: 'resolved' })
+          .catch((err) => console.error(`[incident] re-lock failed: ${(err as Error).message}`))
         console.log(`[incident] closed #${issue.number} for ${m.id} (${durationMinutes}min)`)
         await sendWebhook({
           version: 1,

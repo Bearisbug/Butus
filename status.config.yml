@@ -22,3 +22,5 @@ monitors:
     group: Main
     target: https://example.com
     timeoutMs: 5000
+  - name: Broken Monitor
+    group: Main

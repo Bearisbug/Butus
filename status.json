@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-01T08:49:55.901Z",
-  "runId": "30692519390",
-  "overall": "operational",
+  "generatedAt": "2026-08-01T08:52:09.379Z",
+  "runId": "30692592794",
+  "overall": "maintenance",
   "monitors": [
     {
       "id": "website",
       "name": "Website",
       "group": "Main",
       "status": "operational",
-      "ms": 50,
+      "ms": 42,
       "reason": null,
-      "lastCheckedAt": "2026-08-01T08:49:55.901Z",
+      "lastCheckedAt": "2026-08-01T08:52:09.379Z",
       "since": "2026-08-01T08:38:56.625Z",
       "openIncident": null
     },
@@ -20,9 +20,9 @@
       "name": "Website (content check)",
       "group": "Main",
       "status": "operational",
-      "ms": 54,
+      "ms": 37,
       "reason": null,
-      "lastCheckedAt": "2026-08-01T08:49:55.901Z",
+      "lastCheckedAt": "2026-08-01T08:52:09.379Z",
       "since": "2026-08-01T08:38:56.625Z",
       "openIncident": null
     },
@@ -30,13 +30,23 @@
       "id": "drill",
       "name": "Drill Target",
       "group": "Main",
-      "status": "operational",
-      "ms": 51,
-      "reason": null,
-      "lastCheckedAt": "2026-08-01T08:49:55.901Z",
-      "since": "2026-08-01T08:47:02.334Z",
+      "status": "maintenance",
+      "ms": 6,
+      "reason": "dns_error",
+      "lastCheckedAt": "2026-08-01T08:52:09.379Z",
+      "since": "2026-08-01T08:52:09.379Z",
       "openIncident": null
     }
   ],
-  "activeMaintenances": []
+  "activeMaintenances": [
+    {
+      "number": 2,
+      "title": "Drill: planned maintenance window",
+      "start": "2026-08-01T08:46:37Z",
+      "end": "2026-08-01T10:51:37Z",
+      "monitors": [
+        "drill"
+      ]
+    }
+  ]
 }

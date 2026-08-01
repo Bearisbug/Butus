@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-01T08:47:02.334Z",
-  "runId": "30692429381",
+  "generatedAt": "2026-08-01T08:49:55.901Z",
+  "runId": "30692519390",
   "overall": "operational",
   "monitors": [
     {
@@ -9,9 +9,9 @@
       "name": "Website",
       "group": "Main",
       "status": "operational",
-      "ms": 20,
+      "ms": 50,
       "reason": null,
-      "lastCheckedAt": "2026-08-01T08:47:02.334Z",
+      "lastCheckedAt": "2026-08-01T08:49:55.901Z",
       "since": "2026-08-01T08:38:56.625Z",
       "openIncident": null
     },
@@ -20,9 +20,9 @@
       "name": "Website (content check)",
       "group": "Main",
       "status": "operational",
-      "ms": 27,
+      "ms": 54,
       "reason": null,
-      "lastCheckedAt": "2026-08-01T08:47:02.334Z",
+      "lastCheckedAt": "2026-08-01T08:49:55.901Z",
       "since": "2026-08-01T08:38:56.625Z",
       "openIncident": null
     },
@@ -31,11 +31,11 @@
       "name": "Drill Target",
       "group": "Main",
       "status": "operational",
-      "ms": 22,
+      "ms": 51,
       "reason": null,
-      "lastCheckedAt": "2026-08-01T08:47:02.334Z",
+      "lastCheckedAt": "2026-08-01T08:49:55.901Z",
       "since": "2026-08-01T08:47:02.334Z",
-      "openIncident": 1
+      "openIncident": null
     }
   ],
   "activeMaintenances": []

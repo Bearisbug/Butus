@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-22T19:46:42.620Z",
-  "runId": "32594696694",
+  "generatedAt": "2026-08-22T19:58:13.060Z",
+  "runId": "32595265339",
   "overall": "operational",
   "monitors": [
     {
@@ -11,7 +11,7 @@
       "status": "operational",
       "ms": 43,
       "reason": null,
-      "lastCheckedAt": "2026-08-22T19:46:42.620Z",
+      "lastCheckedAt": "2026-08-22T19:58:13.060Z",
       "since": "2026-08-01T08:38:56.625Z",
       "openIncident": null
     },
@@ -22,7 +22,7 @@
       "status": "operational",
       "ms": 48,
       "reason": null,
-      "lastCheckedAt": "2026-08-22T19:46:42.620Z",
+      "lastCheckedAt": "2026-08-22T19:58:13.060Z",
       "since": "2026-08-01T08:38:56.625Z",
       "openIncident": null
     }

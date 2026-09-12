@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T18:38:43.545Z",
-  "runId": "34711807501",
+  "generatedAt": "2026-09-12T20:55:10.772Z",
+  "runId": "34718454839",
   "overall": "operational",
   "monitors": [
     {
@@ -9,9 +9,9 @@
       "name": "Website",
       "group": "Main",
       "status": "operational",
-      "ms": 45,
+      "ms": 44,
       "reason": null,
-      "lastCheckedAt": "2026-09-12T18:38:43.545Z",
+      "lastCheckedAt": "2026-09-12T20:55:10.772Z",
       "since": "2026-08-01T08:38:56.625Z",
       "openIncident": null
     },
@@ -20,9 +20,9 @@
       "name": "Website (content check)",
       "group": "Main",
       "status": "operational",
-      "ms": 52,
+      "ms": 50,
       "reason": null,
-      "lastCheckedAt": "2026-09-12T18:38:43.545Z",
+      "lastCheckedAt": "2026-09-12T20:55:10.772Z",
       "since": "2026-08-01T08:38:56.625Z",
       "openIncident": null
     }

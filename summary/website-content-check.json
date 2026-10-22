@@ -824,12 +824,12 @@
     },
     {
       "date": "2026-10-22",
-      "total": 5,
-      "up": 5,
+      "total": 6,
+      "up": 6,
       "degraded": 0,
       "down_count": 0,
       "down_minutes": 0,
-      "avg_ms": 57,
+      "avg_ms": 56,
       "max_ms": 95
     }
   ]

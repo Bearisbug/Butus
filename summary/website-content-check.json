@@ -854,12 +854,12 @@
     },
     {
       "date": "2026-10-25",
-      "total": 6,
-      "up": 6,
+      "total": 7,
+      "up": 7,
       "degraded": 0,
       "down_count": 0,
       "down_minutes": 0,
-      "avg_ms": 71,
+      "avg_ms": 65,
       "max_ms": 223
     }
   ]

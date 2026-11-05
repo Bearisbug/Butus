@@ -964,13 +964,13 @@
     },
     {
       "date": "2026-11-05",
-      "total": 3,
-      "up": 3,
+      "total": 4,
+      "up": 4,
       "degraded": 0,
       "down_count": 0,
       "down_minutes": 0,
-      "avg_ms": 48,
-      "max_ms": 69
+      "avg_ms": 56,
+      "max_ms": 80
     }
   ]
 }
